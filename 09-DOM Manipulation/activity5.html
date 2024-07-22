@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="main">Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum, ea!</p>
+    <button id="btn">click to change text</button>
+
+    <br>
+    <br>
+    <br>
+
+    <h1 id="head" style="border: 10px solid black;">Mouse Over Here</h1>
+
+    <script>
+        //Activity 5 - Event Handling
+        //Task 9
+        const para = document.getElementById("main")
+        const btn = document.getElementById('btn')
+        btn.addEventListener("click",(e)=>{
+            if(para.textContent == `Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum, ea!` && btn.textContent == `click to change text`){
+                para.textContent = `I am changed after clicked`
+                btn.innerHTML= `click to previous text`
+            }
+            else{
+                para.textContent = `Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum, ea!`
+                btn.innerHTML = `click to change text`
+            }
+        })
+
+        //Task 10
+        const head = document.getElementById('head')
+        head.addEventListener("mouseover", ()=>{
+            head.style.borderColor = "red"
+        })
+        head.addEventListener("mouseout", ()=>{
+            head.style.borderColor = "black"
+        })
+    </script>
+</body>
+</html>

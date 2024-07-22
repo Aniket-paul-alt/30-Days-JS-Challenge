@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="remove">I am removed element</div>
+
+    <ul>
+        <li>fruits</li>
+        <li>vegetables</li>
+        <li>food</li>
+    </ul>
+
+    <script>
+        //Activity 3 - Removing Elements
+        //Task 5
+        const remove = document.getElementById('remove')
+        remove.remove()
+
+        //Task 6
+        const ul = document.querySelector('ul')
+        const lastList = ul.lastElementChild
+
+        ul.removeChild(lastList)
+        
+
+
+    </script>
+</body>
+</html>

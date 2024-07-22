@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="heading">DOM Manipulation</h1>
+    <div class="head">Keep Practicing</div>
+
+    <script>
+        //Activity 1 - Selecting and Manipulating Elements
+        //Task 1
+        const heading = document.getElementById("heading")
+        heading.textContent = `30 Days JS Challenge - Day 9 DOM`
+
+        //Task 2
+        const head = document.querySelector('.head')
+        head.style.backgroundColor = "red"
+        console.log(head);
+    </script>
+</body>
+</html>

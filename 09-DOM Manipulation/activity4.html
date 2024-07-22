@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img alt="Image">
+    <div>Set Class for this DIV</div>
+
+
+    <script>
+        //Activity 4 - Modifying Attributes and Classes
+        //Task 7
+        const image = document.querySelector('img')
+        image.setAttribute('src', "https://images.pexels.com/photos/27060825/pexels-photo-27060825/free-photo-of-a-sunset-with-clouds-in-the-sky.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1")
+
+        //Task 8
+        const div = document.querySelector('div')
+        div.classList.add("setter")
+        div.classList.add("getter","remove")
+
+        div.classList.remove("remove","getter")
+
+
+    </script>
+</body>
+</html>
