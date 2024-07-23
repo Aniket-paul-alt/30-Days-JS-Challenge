@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Enter Any Key and See in Console</h1>
+    <input style="width: 500px; height: 100px; margin: auto; font-size: 80px;" type="text" id="input1">
+    <h1>Enter Anything</h1>
+    <input style="width: 500px; height: 100px; margin: auto; font-size: 80px;" type="text" id="input2">
+    <br>
+    <br>
+    <br>
+    <span style="font-size: 50px;">Para : </span>
+    <p style="font-size: 50px; display: inline;" id="para"></p>
+
+    <script>
+        //Activity 3 - keyboard Events
+        //Task 5
+        const input1 = document.querySelector('#input1')
+        input1.addEventListener("keydown",(e)=>{
+            // console.log(e);
+            console.log(`key pressed : ${e.key}\nkey code : ${e.which}`);
+        })
+
+
+        //Task 6
+        const input2 = document.querySelector('#input2')
+        const para = document.querySelector("#para")
+        input2.addEventListener("keyup",(e)=>{
+            // console.log(e);
+            // console.log(`key pressed : ${e.key}\nkey code : ${e.which}`);
+            para.textContent = `${e.target.value}`
+        })
+
+    </script>
+</body>
+</html>

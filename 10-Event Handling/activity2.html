@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="head" style="border: 50px solid black;">Mouse Over Here</h1>
+
+    <script>
+        //Activity 2 - Mouse Events
+        //Task 3 
+        const head = document.getElementById('head')
+        head.addEventListener("mouseover", ()=>{
+            head.style.borderColor = "red"
+            head.textContent = 'Now Mouse Out'
+        })
+        //Task 4
+        head.addEventListener("mouseout", ()=>{
+            head.style.borderColor = "black"
+            head.textContent = 'Mouse Over Here'
+        })
+
+
+    </script>
+</body>
+</html>

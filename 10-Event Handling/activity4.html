@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="form">
+        <label>Name: </label><input type="text" placeholder="name" id="name">
+        <label>age: </label><input type="number" placeholder="age" id="age">
+        <button id="btn">submit</button>
+    </form>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <label >
+        Choose Your Football Club :
+        <select name="football" id="football">
+            <option value="">Select one ...</option>
+            <option value="East Bengal FC">East Bengal FC</option>
+            <option value="Real Madrid">Real Madrid</option>
+            <option value="FC Bayern Munchen">FC Bayern Munchen</option>
+            <option value="Manchester United">Manchester United</option>
+            <option value="Manchester City">Manchester City</option>
+            <option value="Chelsea FC">Chelsea FC</option>
+        </select>
+    </label>
+
+    <p id="para">You like : </p>
+
+    <script>
+        //Activity 4 - Form Evenets
+        //Task 7
+        // const name = document.querySelector("#name")
+        // const age = document.querySelector("#age")
+        const btn = document.querySelector("#btn")
+        const form = document.querySelector("#form")
+        form.addEventListener('submit',(e)=>{
+            // console.log(e);
+            // console.log(e.target[0].value);
+            console.log(`Name : ${e.target[0].value}\nAge : ${e.target[1].value}`);
+            e.preventDefault()
+        })
+
+
+
+        //Task 8
+        const selectClub = document.querySelector("#football")
+        const para = document.querySelector("#para")
+
+        selectClub.addEventListener("change",(e)=>{
+            // console.log(e);
+            // console.log(e.target[1]);
+            // console.log(e.target.textContent);
+            para.textContent = `You like : ${e.target.value}`
+        })
+
+    </script>
+</body>
+</html>

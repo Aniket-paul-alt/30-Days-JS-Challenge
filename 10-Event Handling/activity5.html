@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul style="cursor: pointer;" id="my-list">
+        <li>Fruits</li>
+        <li>Vegetables</li>
+        <li>Flowers</li>
+        <li>Animals</li>
+        <div>Humans</div>
+    </ul>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <ul style="cursor: pointer;" id="parent">
+        Click here for add new childElement
+    </ul>
+
+    <script>
+        const list = document.getElementById("my-list");
+
+        list.addEventListener("click", (event) => {
+            // console.log(event);
+            if (event.target.tagName === "LI") {
+                console.log(event.target.textContent);
+            }
+        });
+
+
+
+        //Task 10
+        const parent = document.querySelector("#parent")
+        parent.addEventListener('click', (e) => {
+            if(e.target.tagName === 'UL'){
+                const newList = document.createElement("li");
+                newList.textContent = `New Child List! created at : ${e.timeStamp}`;
+                parent.appendChild(newList);
+            }
+        })
+    </script>
+</body>
+
+</html>
