@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Session storage
+    <br>
+    Here we are using Browser because the sessionStorage property is a part of Browser's window object. As such, its not available on the server side like, Node JS during server side rendering.
+
+    <script>
+        //Activity 3 - Understanding SessionStorage
+        //Task 5
+        const myStr = "Hello I am stored in Session Storage"
+
+        sessionStorage.setItem("myStr", myStr)
+
+        console.log("Retrieved : "+sessionStorage.getItem("myStr"));
+
+        //Task 6
+        const myObj = {
+            name: "Aniket Paul",
+            age: 22
+        }
+
+        localStorage.setItem("myObj", JSON.stringify(myObj))
+
+        const retrievedObj = localStorage.getItem("myObj")
+
+        console.log(retrievedObj);
+        
+    </script>
+</body>
+</html>

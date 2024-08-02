@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    LocalStorage vs SessionStorage
+
+    <script>
+        //Activity 5 - Comparing LocalStorage and SessionStorage
+        //Task 9
+
+        function compareLocalAndSession(key, value) {
+            localStorage.setItem(key, value)
+            sessionStorage.setItem(key, value)
+
+            console.log("Retrieved from Local: " + localStorage.getItem(key));
+            console.log("Retrieved from Session: " + sessionStorage.getItem(key));
+        }
+
+        compareLocalAndSession("myVal", "Hello Buddy!!")
+
+        //Task 10
+        function clearAllStorage() {
+            // Clear local storage
+            localStorage.clear();
+
+            // Clear session storage
+            sessionStorage.clear();
+        }
+
+        // Call the function to clear storage
+        clearAllStorage();
+
+        // Verify that both storages are empty
+        const isLocalStorageEmpty = localStorage.length === 0;
+        const isSessionStorageEmpty = sessionStorage.length === 0;
+
+        console.log('Is local storage empty?', isLocalStorageEmpty);
+        console.log('Is session storage empty?', isSessionStorageEmpty);
+
+
+    </script>
+</body>
+
+</html>

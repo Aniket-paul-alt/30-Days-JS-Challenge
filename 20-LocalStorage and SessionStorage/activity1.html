@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    LocalStorage 
+    <br>
+    Here we are using Browser because the localStorage property is a part of Browser's window object. As such, its not available on the server side like, Node JS during server side rendering.
+    <script>
+        //Activity 1 - Understanding LocalStorage
+        //Task 1
+        const str = " Hello Buddy!!"
+
+        localStorage.setItem("myKey", str)
+
+        const retrievedValue = localStorage.getItem("myKey")
+
+        console.log(retrievedValue);
+
+        //Task 2
+        const obj = {
+            name: "Aniket Paul",
+            age: 22
+        }
+
+        localStorage.setItem("myObj", JSON.stringify(obj))
+
+        const retrievedObj = localStorage.getItem("myObj")
+
+        console.log(retrievedObj);
+        
+    </script>
+</body>
+</html>

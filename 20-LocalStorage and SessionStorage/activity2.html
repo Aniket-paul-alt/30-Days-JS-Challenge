@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Data Form</title>
+    <!-- You can link a CSS file here if you want to style your form -->
+</head>
+
+<body>
+    <h1>User Data Form</h1>
+    <form id="userForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" required>
+        <label for="email">Email:</label>
+        <input type="email" id="email" required>
+        <button type="submit">Save</button>
+    </form>
+    <div id="userDataDisplay"></div>
+    <script>
+        //Activity 2 - Using LocalStorage
+        //Task 3
+        
+        const userForm = document.getElementById('userForm');
+        const userDataDisplay = document.getElementById('userDataDisplay');
+
+        // Load saved data from local storage on page load
+        const savedName = localStorage.getItem('userName');
+        const savedEmail = localStorage.getItem('userEmail');
+
+        if (savedName && savedEmail) {
+            userDataDisplay.innerHTML = `
+        <p>Name: ${savedName}</p>
+        <p>Email: ${savedEmail}</p>
+    `;
+        }
+
+        // Handle form submission
+        userForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const nameInput = document.getElementById('name');
+            const emailInput = document.getElementById('email');
+
+            const userName = nameInput.value;
+            const userEmail = emailInput.value;
+
+            // Save data to local storage
+            localStorage.setItem('userName', userName);
+            localStorage.setItem('userEmail', userEmail);
+
+            // Display saved data
+            userDataDisplay.innerHTML = `
+        <p>Name: ${userName}</p>
+        <p>Email: ${userEmail}</p>
+    `;
+
+            // Clear input fields
+            nameInput.value = '';
+            emailInput.value = '';
+        });
+
+        //Task 4
+
+        // Function to remove a string from local storage and log the contents
+        function removeStringFromLocalStorage(key) {
+        // Log local storage content before removal
+        console.log("Local storage before removal:", JSON.parse(JSON.stringify(localStorage)));
+
+        // Remove the item from local storage
+        localStorage.removeItem(key);
+
+        // Log local storage content after removal
+        console.log("Local storage after removal:", JSON.parse(JSON.stringify(localStorage)));
+        }
+
+        // Example usage
+        // Assuming you have already set an item in local storage
+        localStorage.setItem('exampleKey', 'exampleValue');
+
+        // Call the function to remove the item and log the local storage content
+        removeStringFromLocalStorage('exampleKey');
+
+
+
+    </script>
+</body>
+
+</html>
