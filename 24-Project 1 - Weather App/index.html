@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Forecast</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="weather-app">
+        <h1>Weather Forecast</h1>
+        <input type="text" placeholder="Enter area" id="areaInput"><button id="btn">search</button>
+        <div class="current-weather">
+            <h2>Current Weather</h2>
+            <div class="weather-card">
+                <div class="location">Tokyo, Japan</div>
+                <div class="temperature" id="current-temp">25°C</div>
+                <div class="description" id="current-desc">Sunny</div>
+                <div class="image"></div>
+            </div>
+        </div>
+        <div class="forecast">
+            <h2>5-Day Forecast</h2>
+            <div class="forecast-cards">
+                <div class="forecast-card">
+                    <div class="day">Monday</div>
+                    <div class="temperature">24°C</div>
+                    <div class="description">Cloudy</div>
+                </div>
+                <div class="forecast-card">
+                    <div class="day">Tuesday</div>
+                    <div class="temperature">26°C</div>
+                    <div class="description">Rainy</div>
+                </div>
+                <div class="forecast-card">
+                    <div class="day">Wednesday</div>
+                    <div class="temperature">27°C</div>
+                    <div class="description">Sunny</div>
+                </div>
+                <div class="forecast-card">
+                    <div class="day">Thursday</div>
+                    <div class="temperature">28°C</div>
+                    <div class="description">Partly Cloudy</div>
+                </div>
+                <div class="forecast-card">
+                    <div class="day">Friday</div>
+                    <div class="temperature">29°C</div>
+                    <div class="description">Sunny</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
