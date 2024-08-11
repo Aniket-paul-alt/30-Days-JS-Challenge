@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Media Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+    <div class="sidebar">
+        <h2>User Information</h2>
+        <img id="display-picture" src="" alt="Profile Picture">
+        <p id="user-info"></p>
+        <button id="edit-user">Edit</button>
+        <h2>Notifications</h2>
+        <div id="notifications"></div>
+    </div>
+    <div class="main-content">
+        <div class="post-form">
+            <h2>Create a New Post</h2>
+            <textarea id="post-content" placeholder="What's on your mind?"></textarea>
+            <input type="text" id="post-image" placeholder="Image URL (optional)">
+            <button id="post-button">Post</button>
+        </div>
+        <div class="posts-container" id="posts-container">
+            <!-- Posts will appear here -->
+        </div>
+    </div>
+    <script src="dashboard.js"></script>
+</body>
+</html>
