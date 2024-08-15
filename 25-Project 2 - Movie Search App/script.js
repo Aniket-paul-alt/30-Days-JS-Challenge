@@ -59,9 +59,16 @@ btn.addEventListener('click',(e)=>{
                 curr.addEventListener("click",(e)=>{
                     e.preventDefault()
                     console.log("hii");
+                    console.log(moviesArray.imdbID);
+                    moviesArray.map((m)=>{
+                        console.log(m.imdbID);
+                        
+                    })
                     // console.log(e, movie, moviesArray);
                     // moviesArray.map
                     // const infoURL = `https://www.omdbapi.com/?t=${movie}&apikey=8dea0f06`
+                    // const infoURL = `https://www.omdbapi.com/?i=tt2113735&apikey=8dea0f06`
+                    // https://www.omdbapi.com/?i=tt2113735
                 })
             })
 
