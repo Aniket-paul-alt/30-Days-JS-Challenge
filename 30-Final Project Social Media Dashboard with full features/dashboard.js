@@ -9,8 +9,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const notifications = JSON.parse(localStorage.getItem('notifications')) || [];
     displayPosts(posts);
     displayNotifications(notifications);
-
-
+    
+    
     document.getElementById('post-button').addEventListener('click', function() {
         const postContent = document.getElementById('post-content').value;
         const postImage = document.getElementById('post-image').value;
@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', function() {
         posts[index].likes += 1;
         localStorage.setItem('posts', JSON.stringify(posts));
         displayPosts(posts);
-        addNotification(`Your post received a new like!`);
+        addNotification(`your post received a new like!`);
     };
 
     window.toggleCommentSection = function(index) {
@@ -85,7 +85,7 @@ document.addEventListener('DOMContentLoaded', function() {
             posts[index].comments.push(comment);
             localStorage.setItem('posts', JSON.stringify(posts));
             displayPosts(posts);
-            addNotification(`Your post received a new comment!`);
+            addNotification(`your post received a new comment!`);
         } else {
             alert('Please enter a comment.');
         }

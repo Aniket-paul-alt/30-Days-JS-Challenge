@@ -6,7 +6,9 @@ btn.addEventListener('click',(e)=>{
     e.preventDefault()
     let movie = input.value
     console.log(movie);
-    const URL = `https://www.omdbapi.com/?t=${movie}&apikey=8dea0f06`
+    const URL = `https://www.omdbapi.com/?s=${movie}&apikey=8dea0f06`
+    
+    
 
     async function searchMovies(){
         try {
@@ -33,51 +35,34 @@ btn.addEventListener('click',(e)=>{
                 resultCont.appendChild(div)
                 return
             }
-
+            let div
+            moviesArray.map((data)=>{
+                div = document.createElement('div')
+                div.setAttribute('class','movie-card')
+                div.innerHTML=`
+                <img src="${data.Poster}" alt="Movie Poster" class="movie-poster">
+                <div class="movie-info">
+                    <h3 class="movie-title">${data.Title}</h3>
+                    <p class="release-year">Release Year: ${data.Year}</p>
+                    <button id='more-info'>more info</button>
+                </div>
+                `
+                resultCont.appendChild(div)
+            });
             
-            const div = document.createElement('div')
-            div.setAttribute('class','movie-card')
-            div.innerHTML=`
-            <img src="${data.Poster}" alt="Movie Poster" class="movie-poster">
-            <div class="movie-info">
-                <h3 class="movie-title">${data.Title}</h3>
-                <p class="release-year">Release Year: ${data.Year}</p>
-                <button id='more-info'>more info</button>
-            </div>
-            `
-            resultCont.appendChild(div)
+            const moreinfo = document.querySelectorAll("#more-info")
 
-            const infoBtn = document.querySelector('#more-info')
-            infoBtn.addEventListener('click',(e)=>{
-                e.preventDefault()
-                
-                    console.log("hiiii");
-                    div.innerHTML=`
-                        <img src="${data.Poster}" alt="Movie Poster" class="movie-poster">
-                        <div class="movie-info">
-                            <h3 class="movie-title">${data.Title}</h3>
-                            <p class="release-year">Release Year: ${data.Year}</p>
-                            <p class="release-year">Director: ${data.Director}</p>
-                            <p class="release-year">Actors: ${data.Actors}</p>
-                            <p class="release-year">Plot: ${data.Plot}</p>
-                            <button id='less-info'>less info</button>
-                        </div>
-                    `  
-                        const lessInfo = document.querySelector("#less-info")
-                        lessInfo.addEventListener('click',(e)=>{
-                            e.preventDefault()
-                            console.log("helooooo");
-                            
-                            div.innerHTML=`
-                            <img src="${data.Poster}" alt="Movie Poster" class="movie-poster">
-                            <div class="movie-info">
-                            <h3 class="movie-title">${data.Title}</h3>
-                            <p class="release-year">Release Year: ${data.Year}</p>
-                            <button id='more-info'>more info</button>
-                            </div>
-                        `
-                        }) 
-                
+            console.log(moreinfo);
+            
+            moreinfo.forEach(curr=>{
+                console.log(curr);
+                curr.addEventListener("click",(e)=>{
+                    e.preventDefault()
+                    console.log("hii");
+                    // console.log(e, movie, moviesArray);
+                    // moviesArray.map
+                    // const infoURL = `https://www.omdbapi.com/?t=${movie}&apikey=8dea0f06`
+                })
             })
 
             
